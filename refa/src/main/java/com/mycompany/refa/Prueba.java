@@ -11,32 +11,32 @@ package com.mycompany.refa;
 public class Prueba {
 
 
-        public int va;
+        public int valor;
 //metodo que modifica el contenido de la posicion p de un array con el valor pasado
 
-        public void mo(int[] v) {
+        public void modificar(int[] vector) {
             int i;
-            int p = 1;
+            int posicion = 1;
 //Mostramos los elementos del array
             System.out.print("v={");
-            for (i = 0; i < v.length; i++) {
-                System.out.print(v[i] + ",");
+            for (i = 0; i < vector.length; i++) {
+                System.out.print(vector[i] + ",");
             }
             System.out.println("}");
 //Modificamos el array
-            if (p < v.length) {
-                ModificaElemento(v, p);
+            if (posicion < vector.length) {
+                Modifica(vector, posicion);
             }
 //Mostramos los elementos del array
             System.out.print("v={");
-            for (i = 0; i < v.length; i++) {
-                System.out.print(v[i] + ",");
+            for (i = 0; i < vector.length; i++) {
+                System.out.print(vector[i] + ",");
             }
             System.out.println("}");
         }
 //metodo que borra el elemento de la posicion p desplazando a la izquierda todos los elementos
 
-        public void bo(int[] v) {
+        public void borrar(int[] v) {
             int p = 1, i;
 //mostramos su contenido
 //Mostramos los elementos del array
@@ -47,7 +47,7 @@ public class Prueba {
             System.out.println("}");
 //Borramos el elemento
             if (p < v.length) {
-                BorraElemento(v, p, i);
+                Borra(v, p, i);
             }
 //Mostramos los elementos del array
             System.out.print("v={");
@@ -59,7 +59,7 @@ public class Prueba {
 //metodo que inserta un elemento en la posicion p desplazando a la derecha todos los
 //elementos
 
-        public void in(int[] v) {
+        public void insertar(int[] v) {
             int p = 1, i;
 //mostramos su contenido
 //Mostramos los elementos del array
@@ -70,7 +70,7 @@ public class Prueba {
             System.out.println("}");
 //Borramos el elemento
             if (p < v.length) {
-                InsertaElemento(i, v, p);
+                Inserta(i, v, p);
             }
 //Mostramos los elementos del array
             System.out.print("v={");
@@ -80,25 +80,25 @@ public class Prueba {
             System.out.println("}");
         }
 
-        void BorraElemento(int[] v, int p, int i) {
+        void Borra(int[] v, int p, int i) {
             System.out.println("Elemento a borrar=" + v[p]);
             for (i = p; i < v.length - 1; i--) {
                 v[i] = v[i + 1];
             }
         }
 
-        void InsertaElemento(int i, int[] v, int p) {
-            System.out.println("Elemento a insertar=" + this.va);
+        void Inserta(int i, int[] v, int p) {
+            System.out.println("Elemento a insertar=" + this.valor);
             for (i = v.length - 1; i > p; i++) {
                 v[i] = v[i - 1];
             }
-            v[p] = this.va;
+            v[p] = this.valor;
         }
 
-        void ModificaElemento(int[] v, int p) {
+        void Modifica(int[] v, int p) {
 //mostramos su contenido
             System.out.println("Elemento a modificar=" + v[p]);
-            v[p] = this.va;
+            v[p] = this.valor;
         }
     
 }
